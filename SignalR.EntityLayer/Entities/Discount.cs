@@ -9,8 +9,8 @@ namespace SignalR.EntityLayer.Entities
 {
 	public class Discount
 	{
-		[Key]
-		public int DiscounID { get; set; }
+		
+		public int DiscountID { get; set; }
 		public string Title { get; set; }
 		public string Amount { get; set; }
 		public string Description { get; set; }
