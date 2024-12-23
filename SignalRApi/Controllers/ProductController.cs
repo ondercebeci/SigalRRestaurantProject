@@ -15,7 +15,7 @@ namespace SignalRApi.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly IProductService  _productService;
+        private readonly IProductService _productService;
         private readonly IMapper _mapper;
 
         public ProductController(IProductService productService, IMapper mapper)
@@ -56,7 +56,7 @@ namespace SignalRApi.Controllers
             _productService.TAdd(value);
             return Ok("Ürün Eklendi");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteProduct(int id)
         {
             var value = _productService.TGetByID(id);
