@@ -34,14 +34,14 @@ namespace SignalRApi.Controllers
             _socialMediaService.TAdd(value);
             return Ok("Sosyal Medya Eklendi");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteSocialMedia(int id)
         {
             var value = _socialMediaService.TGetByID(id);
             _socialMediaService.TDelete(value);
             return Ok("Sosyal Medya Silindi");
         }
-        [HttpGet("GetSocialMedia")]
+        [HttpGet("id")]
         public IActionResult GetSocialMedia(int id)
         {
             var value = _socialMediaService.TGetByID(id);
