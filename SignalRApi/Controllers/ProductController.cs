@@ -46,8 +46,32 @@ namespace SignalRApi.Controllers
             });
             return Ok(values.ToList());
         }
-
-
+        [HttpGet("ProductCountByHamburger")]
+        public IActionResult ProductCountByHamburger()
+        {
+            return Ok(_productService.TProductCountByCategoryNameHamburger());
+        }
+        [HttpGet("ProductCountByDrink")]
+        public IActionResult ProductCountByDrink()
+        {
+            return Ok(_productService.TProductCountByCategoryNameDrink());
+        }
+        [HttpGet("ProductAveragePrice")]
+        public IActionResult ProductAveragePrice()
+        {
+            return Ok(_productService.TProductAveragePrice());
+        }
+         
+        [HttpGet("ProductNameByMinPrice")]
+        public IActionResult ProductNameByMinPrice()
+        {
+            return Ok(_productService.TProductNameByMinPrice());
+        }
+        [HttpGet("ProductNameByMaxPrice")]
+        public IActionResult ProductNameByMaxPrice()
+        {
+            return Ok(_productService.TProductNameByMaxPrice());
+        }
 
         [HttpPost]
         public IActionResult CreateProduct(CreateProductDto createProductDto)
@@ -68,6 +92,11 @@ namespace SignalRApi.Controllers
         {
             var value = _productService.TGetByID(id);
             return Ok(value);
+        }
+        [HttpGet("ProductCount")]
+        public IActionResult ProductCount()
+        {
+            return Ok(_productService.TProductCount());
         }
         [HttpPut]
         public IActionResult UpdateProduct(UpdateProductDto  updateProductDto)

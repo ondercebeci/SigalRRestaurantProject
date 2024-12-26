@@ -10,5 +10,12 @@ namespace SignalR.BussinessLayer.Abstract
 	public interface IProductService:IGenericService<Product>
 	{
         List<Product> TGetProductsWithCategories();
+        public int TProductCount();
+        public int TProductCountByCategoryNameHamburger();
+        public int TProductCountByCategoryNameDrink();
+
+        public decimal TProductAveragePrice();
+        public string TProductNameByMaxPrice();
+        public string TProductNameByMinPrice();
     }
 }

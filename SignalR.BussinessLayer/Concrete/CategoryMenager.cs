@@ -18,9 +18,19 @@ namespace SignalR.BussinessLayer.Concrete
             _categoryDal = categoryDal;
         }
 
+        public int TActiveCategoryCount()
+        {
+            return _categoryDal.ActiveCategoryCount();
+        }
+
         public void TAdd(Category Entity)
         {
             _categoryDal.Add(Entity);
+        }
+
+        public int TCategoryCount()
+        {
+           return _categoryDal.CategoryCount();
         }
 
         public void TDelete(Category Entity)
@@ -36,6 +46,11 @@ namespace SignalR.BussinessLayer.Concrete
         public List<Category> TGetListAll()
         {
             return _categoryDal.GetListAll();
+        }
+
+        public int TPassiveCategoryCount()
+        {
+            return _categoryDal.PassiveCategoryCount();
         }
 
         public void TUpdate(Category Entity)
