@@ -45,6 +45,11 @@ namespace SignalR.BussinessLayer.Concrete
            return _productDal.GetProductsWithCategories();
         }
 
+        public decimal TProductAverageByHamburger()
+        {
+            return _productDal.ProductAverageByHamburger();
+        }
+
         public decimal TProductAveragePrice()
         {
             return _productDal.ProductAveragePrice();

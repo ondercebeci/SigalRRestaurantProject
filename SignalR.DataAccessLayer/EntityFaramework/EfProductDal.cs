@@ -24,7 +24,12 @@ namespace SignalR.DataAccessLayer.EntityFaramework
             return values;
         }
 
-      
+        public decimal ProductAverageByHamburger()
+        {
+            SignalRContext context = new SignalRContext();
+
+            return context.Products.Where(x => x.Category.CategoryName == "Hamburger").Select(y => y.Price).Average();
+        }
 
         public int ProductCount()
         {
@@ -63,5 +68,7 @@ namespace SignalR.DataAccessLayer.EntityFaramework
 
 
         }
+
+
     }
 }
