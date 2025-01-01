@@ -5,11 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SignalR.DataAccessLayer.Abstract
+namespace SignalR.BussinessLayer.Abstract
 {
-    public interface IMenuTableDal:IGenericDal<MenuTable>
+    public interface ISliderService:IGenericService<Slider>
     {
-        int MenuTableCount();
-        int ActiveMenuTableCount();
     }
 }

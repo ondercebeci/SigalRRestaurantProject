@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 
 namespace SignalR.DataAccessLayer.Abstract
 {
-    public interface IMenuTableDal:IGenericDal<MenuTable>
+    public interface ISliderDal:IGenericDal<Slider>
     {
-        int MenuTableCount();
-        int ActiveMenuTableCount();
     }
 }

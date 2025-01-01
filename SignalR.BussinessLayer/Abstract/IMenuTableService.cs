@@ -10,5 +10,6 @@ namespace SignalR.BussinessLayer.Abstract
     public interface IMenuTableService:IGenericService<MenuTable>
     {
         int TMenuTableCount();
+        int TActiveMenuTableCount();
     }
 }

@@ -61,7 +61,10 @@ builder.Services.AddScoped<IMoneyCaseService, MoneyCaseMenager>();
 builder.Services.AddScoped<IMoneyCaseDal, EfMoneyCaseDal>();
 
 builder.Services.AddScoped<IMenuTableService, MenuTableMenager>();
-builder.Services.AddScoped<IMenuTableDal, EfMenuTableDal    >();
+builder.Services.AddScoped<IMenuTableDal, EfMenuTableDal>();
+
+builder.Services.AddScoped<ISliderService, SliderMenager>();
+builder.Services.AddScoped<ISliderDal, EfSliderDal>();
 
 
 builder.Services.AddControllers();

@@ -19,6 +19,11 @@ namespace SignalR.BussinessLayer.Concrete
             _menuTableDal = menuTableDal;
         }
 
+        public int TActiveMenuTableCount()
+        {
+            return _menuTableDal.ActiveMenuTableCount();
+        }
+
         public void TAdd(MenuTable Entity)
         {
             throw new NotImplementedException();
