@@ -20,12 +20,12 @@ namespace SignalR.BussinessLayer.Concrete
 
         public void TAdd(Basket Entity)
         {
-            throw new NotImplementedException();
+            _basketDal.Add(Entity);
         }
 
         public void TDelete(Basket Entity)
         {
-            throw new NotImplementedException();
+            _basketDal.Delete(Entity);
         }
 
         public List<Basket> TGetBasketByMenuTableNumber(int id)
@@ -35,7 +35,7 @@ namespace SignalR.BussinessLayer.Concrete
 
         public Basket TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _basketDal.GetByID(id);
         }
 
         public List<Basket> TGetListAll()

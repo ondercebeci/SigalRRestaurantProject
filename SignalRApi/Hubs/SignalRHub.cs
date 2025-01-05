@@ -5,21 +5,23 @@ using SignalR.DataAccessLayer.Conctrete;
 
 namespace SignalRApi.Hubs
 {
-    public class SignalRHub:Hub
+    public class SignalRHub : Hub
     {
         private readonly ICategoryService _categoryService;
         private readonly IProductService _productService;
-        private readonly IOrderService  _orderService;
-        private readonly IMoneyCaseService  _moneyCaseService;
-        private readonly IMenuTableService   _menuTableService;
+        private readonly IOrderService _orderService;
+        private readonly IMoneyCaseService _moneyCaseService;
+        private readonly IMenuTableService _menuTableService;
+        private readonly IBookingService _bookingService;
 
-        public SignalRHub(ICategoryService categoryService, IProductService productService, IOrderService orderService, IMoneyCaseService moneyCaseService, IMenuTableService menuTableService)
+        public SignalRHub(ICategoryService categoryService, IProductService productService, IOrderService orderService, IMoneyCaseService moneyCaseService, IMenuTableService menuTableService, IBookingService bookingService)
         {
             _categoryService = categoryService;
             _productService = productService;
             _orderService = orderService;
             _moneyCaseService = moneyCaseService;
             _menuTableService = menuTableService;
+            _bookingService = bookingService;
         }
 
         public async Task SendStatistic()
@@ -77,7 +79,7 @@ namespace SignalRApi.Hubs
         public async Task SendProgress()
         {
             var value = _moneyCaseService.TTotalMoneyCaseAmount();
-            await Clients.All.SendAsync("ReceiveTotalMoneyCaseAmount",value.ToString("0,00")+"₺");
+            await Clients.All.SendAsync("ReceiveTotalMoneyCaseAmount", value.ToString("0,00") + "₺");
 
             var value2 = _menuTableService.TMenuTableCount();
             await Clients.All.SendAsync("ReceiveMenuTableCount", value2);
@@ -87,6 +89,12 @@ namespace SignalRApi.Hubs
 
 
 
+        }
+
+        public async Task GetBookingList()
+        {
+            var values = _bookingService.TGetListAll();
+            await Clients.All.SendAsync("ReceiveBookingList", values);
         }
 
     }
