@@ -21,17 +21,17 @@ namespace SignalR.BussinessLayer.Concrete
 
         public void TAdd(Slider Entity)
         {
-            throw new NotImplementedException();
+            _sliderDal.Add(Entity);
         }
 
         public void TDelete(Slider Entity)
         {
-            throw new NotImplementedException();
+            _sliderDal.Delete(Entity);
         }
 
         public Slider TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _sliderDal.GetByID(id);
         }
 
         public List<Slider> TGetListAll()
@@ -41,7 +41,7 @@ namespace SignalR.BussinessLayer.Concrete
 
         public void TUpdate(Slider Entity)
         {
-            throw new NotImplementedException();
+            _sliderDal.Update(Entity);
         }
     }
 }

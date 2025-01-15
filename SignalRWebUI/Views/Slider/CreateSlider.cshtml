@@ -1,6 +1,6 @@
-﻿@model UpdateFeatureDto
+﻿@model CreateSliderDto
 @{
-    ViewData["Title"] = "UpdateFeature";
+	ViewData["Title"] = "CreateSlider";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
@@ -12,9 +12,8 @@
 				<form method="post">
 					<div class="card">
 						<div class="card-header">
-							<div class="card-title"> Öne Çıkan Alanı Güncelleme İşlemleri</div>
+							<div class="card-title">Yeni Öne Çıkan Alan İşlemleri</div>
 						</div>
-						<input type="hidden" asp-for="FeatureID" />
 						<div class="card-body">
 							<div class="form-group">
 								<label for="Title1">1. Başlığı Giriniz</label>
@@ -53,7 +52,7 @@
 						</div>
 
 						<div class="card-action">
-							<button class="btn btn-outline-primary">Öne Çıkan Alanı Güncelle</button>
+							<button class="btn btn-outline-primary">Öne Çıkan Alanı Ekle</button>
 						</div>
 					</div>
 				</form>
@@ -62,7 +61,5 @@
 		</div>
 	</div>
 </div>
-
-
 
 
