@@ -46,6 +46,7 @@ namespace SignalRApi.Controllers
         public IActionResult CreateBasket(CreateBasketDto createBasketDto)
         {
             SignalRContext context = new SignalRContext();
+            //var value = Convert.ToInt32(context.Baskets.Select(x => x.MenuTableID == createBasketDto.MenuTableID).FirstOrDefault());
             _basketService.TAdd(new Basket
             {
                 ProductID = createBasketDto.ProductID,
