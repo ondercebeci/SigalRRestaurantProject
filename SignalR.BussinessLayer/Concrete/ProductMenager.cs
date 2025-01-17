@@ -80,6 +80,21 @@ namespace SignalR.BussinessLayer.Concrete
             return _productDal.ProductNameByMinPrice();
         }
 
+		public decimal TProductPriceBySteakBurger()
+		{
+            return _productDal.ProductPriceBySteakBurger();
+		}
+
+        public decimal TTotalPriceByDrinkCategory()
+        {
+            return _productDal.TotalPriceByDrinkCategory();
+        }
+
+        public decimal TTotalPriceBySaladCategory()
+        {
+            return _productDal.TotalPriceBySaladCategory();
+        }
+
         public void TUpdate(Product Entity)
         {
             _productDal.Update(Entity);
