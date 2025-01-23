@@ -111,7 +111,7 @@ namespace SignalRApi.Controllers
         public IActionResult GetProduct(int id)
         {
             var value = _productService.TGetByID(id);
-            return Ok(value);
+            return Ok(_mapper.Map<GetProductDto>(value));
         }
         [HttpGet("ProductCount")]
         public IActionResult ProductCount()
@@ -124,6 +124,12 @@ namespace SignalRApi.Controllers
             var value = _mapper.Map<Product>( updateProductDto);
             _productService.TUpdate(value);
             return Ok("Ürün Güncellendi");
+        }
+        [HttpGet("GetLast9Products")]
+        public IActionResult GetLast9Products()
+        {
+            var value = _productService.TGetLast9Products();
+            return Ok(value);
         }
     }
 }

@@ -11,5 +11,7 @@ namespace SignalR.BussinessLayer.Abstract
     {
         int TMenuTableCount();
         int TActiveMenuTableCount();
+        void TChangeMenuTableStatusToFalse(int id);
+        void TChangeMenuTableStatusToTrue(int id);
     }
 }

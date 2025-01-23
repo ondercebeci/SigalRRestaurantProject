@@ -1,4 +1,5 @@
 ﻿@model List<ResultProductDto>
+
 <section class="food_section layout_padding-bottom">
     <div class="container">
         <div class="heading_container heading_center">
@@ -6,20 +7,16 @@
                 Öne Çıkan Ürünlerimiz
             </h2>
         </div>
-
         <ul class="filters_menu">
-            <li class="active" data-filter="*">Tümü</li>
-            <li data-filter=".burger">Hamburger</li>
-            <li data-filter=".pizza">Pizza</li>
-            <li data-filter=".pasta">Makarna</li>
-            <li data-filter=".fries">Atıştırmalık</li>
+            <li class="active" data-filter="*">Öne Çıkan Ürünler</li>
+            
         </ul>
 
         <div class="filters-content">
             <div class="row grid">
                 @foreach (var item in Model)
                 {
-                    <div class="col-sm-6 col-lg-4 all pizza">
+                    <div class="col-sm-6 col-lg-4 all @item.CategoryName">
                         <div class="box">
                             <div>
                                 <div class="img-box">
@@ -34,7 +31,7 @@
                                     </p>
                                     <div class="options">
                                         <h6>
-                                            $@item.Price₺
+                                            @item.Price ₺
                                         </h6>
                                         <a href="">
                                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
@@ -97,12 +94,11 @@
                     </div>
 
                 }
-               
             </div>
         </div>
         <div class="btn-box">
             <a href="/Menu/Index/">
-              Daha Fazlasını Gör
+                Daha Fazla Menü
             </a>
         </div>
     </div>

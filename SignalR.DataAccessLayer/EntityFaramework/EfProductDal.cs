@@ -5,6 +5,7 @@ using SignalR.DataAccessLayer.Repositories;
 using SignalR.EntitiLayer.Entities;
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,13 @@ namespace SignalR.DataAccessLayer.EntityFaramework
 		public EfProductDal(SignalRContext context) : base(context)
 		{
 		}
+
+        public List<Product> GetLast9Products()
+        {
+            SignalRContext context = new SignalRContext();
+            var values = context.Products.OrderByDescending(x => x.ProductID).Take(9).ToList();
+            return values;
+        }
 
         public List<Product> GetProductsWithCategories()
         {

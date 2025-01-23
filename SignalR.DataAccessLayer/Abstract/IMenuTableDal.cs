@@ -11,5 +11,7 @@ namespace SignalR.DataAccessLayer.Abstract
     {
         int MenuTableCount();
         int ActiveMenuTableCount();
+        void ChangeMenuTableStatusToFalse(int id);
+        void ChangeMenuTableStatusToTrue(int id);
     }
 }
